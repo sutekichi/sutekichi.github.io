@@ -8,6 +8,21 @@ body {
   font-size: 16px;
 }
 
+img {
+  max-width: 100%;
+  display: inline-block;
+  vertical-align: middle;
+}
+
+a {
+  color: #2563eb;
+  font-weight: 800;
+  text-decoration: none;
+}
+
+a:hover {
+  text-decoration: underline;
+}
 
 /* header */
 .site-header {
@@ -47,18 +62,16 @@ body {
   letter-spacing: 0.1em;
 }
 
-
 .hero-text h2 {
   font-size: 28px;
-  letter-spacing: 0.0em;
+  letter-spacing: 0.08em;
   margin: 0;
   color: #fffdf2;
- text-shadow:
+
+  text-shadow:
     3px 3px 0 #7f1d1d,
     0 8px 14px rgba(0, 0, 0, 0.55);
-
 }
-
 
 /* second area: poem */
 .poem-hero {
@@ -100,7 +113,24 @@ body {
   margin: 0 0 0 1em;
 }
 
+/* common card */
+.card {
+  max-width: 1100px;
+  margin: 0 auto 80px;
+  padding: 40px;
+  background-color: #ffffff;
+  border-radius: 20px;
+  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.18);
+}
 
+.card h2 {
+  margin-top: 0;
+  margin-bottom: 28px;
+  font-size: 32px;
+  font-weight: 900;
+  border-bottom: 2px solid #1f2937;
+  padding-bottom: 10px;
+}
 
 /* about section */
 .about-headline h2 {
@@ -109,16 +139,6 @@ body {
   font-weight: 900;
   border-bottom: 2px solid #1f2937;
   padding-bottom: 10px;
-}
-
-
-.about-section {
-  background-color: #ffffff;
-  max-width: 1100px;
-  margin: 0 auto 80px;
-  padding: 40px;
-  border-radius: 20px;
-  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.18);
 }
 
 /* left image + right text layout */
@@ -133,9 +153,9 @@ body {
   width: 380px;
   height: 480px;
   object-fit: cover;
-  border-radius: 20px;
+  border-radius: 22px;
   flex-shrink: 0;
-  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.18);
+  box-shadow: 0 10px 26px rgba(0, 0, 0, 0.22);
 }
 
 /* right text area */
@@ -165,8 +185,6 @@ body {
 .about-text li {
   margin-bottom: 12px;
 }
-
-
 
 /* history section */
 .history-section {
@@ -232,37 +250,20 @@ body {
   align-items: center;
 }
 
-/* common card */
-.card {
-  max-width: 1100px;
-  margin: 0 auto 80px;
-  padding: 40px;
-  background-color: #ffffff;
-  border-radius: 20px;
-  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.18);
-}
-
-.card h2 {
-  margin-top: 0;
-  margin-bottom: 28px;
-  font-size: 32px;
-  font-weight: 900;
-  border-bottom: 2px solid #1f2937;
-  padding-bottom: 10px;
-}
-
 /* what I love section */
 .love-section {
   background-color: #ffffff;
 }
 
-
 .love {
-  padding: 20px 0 20px 24px;
-  margin-bottom: 24px;
+  padding: 24px 0 28px 24px;
+  margin-bottom: 34px;
   border-left: 4px solid #1f2937;
 }
 
+.love:last-child {
+  margin-bottom: 0;
+}
 
 .love h3 {
   margin-top: 0;
@@ -275,7 +276,7 @@ body {
 }
 
 .love p {
-  margin: 0 0 14px;
+  margin: 0 0 16px;
   font-size: 16px;
   line-height: 1.85;
   color: #333;
@@ -287,76 +288,72 @@ body {
 }
 
 .love li {
-  margin-bottom: 8px;
+  margin-bottom: 18px;
   line-height: 1.75;
 }
 
-
-.netero-image{
-    width: 500px;
-    height: 300px;
-    border-radius: 20px;
+/* image common design inside love section */
+.love img {
+  object-fit: cover;
+  border-radius: 18px;
+  margin: 10px 12px 12px 0;
+  background-color: #f3f4f6;
+  box-shadow: 0 6px 18px rgba(0, 0, 0, 0.16);
+  border: 1px solid rgba(31, 41, 55, 0.12);
+  transition: transform 0.25s ease, box-shadow 0.25s ease;
 }
 
-.shibukawa-image{
-    width: 180px;
-    height: 300px;
-    border-radius: 20px;
+.love img:hover,
+.about-image:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 12px 26px rgba(0, 0, 0, 0.25);
 }
 
-.yaruki-image{
-    width: 100px;
-    height: 100px;
+/* tech images */
+.yaruki-image,
+.programmer-image {
+  width: 120px;
+  height: 120px;
+  padding: 10px;
+  object-fit: contain;
 }
 
-.programmer-image{
-     width: 100px;
-    height: 100px;
+/* training images */
+.netero-image {
+  width: 360px;
+  height: 260px;
 }
 
-
-.moeyoken-image{
-    width: 100px;
-    height: 180px;
-}
-.ryomagayuku-image{
-    width: 100px;
-    height: 180px;
-}
-.komyugatsuji-image{
-    width: 100px;
-    height: 180px;
+.shibukawa-image {
+  width: 180px;
+  height: 260px;
 }
 
-
-.super-image{
-    width: 100px;
-    height: 180px;
-
-}
-.garam-image{
-    width: 100px;
-    height: 180px;
-}
-.peace-image{
-    width: 100px;
-    height: 180px;
+/* novel images */
+.moeyoken-image,
+.ryomagayuku-image,
+.komyugatsuji-image {
+  width: 120px;
+  height: 180px;
 }
 
-
-  .godfather-image{
-    width: 360px;
-    height: 200px;
-  }
-
-.scarface-image{
-    width: 360px;
-    height: 200px;
+/* cigar / cigarette images */
+.super-image,
+.garam-image,
+.peace-image {
+  width: 120px;
+  height: 180px;
 }
 
-
-
-
+/* travel images */
+.godfather-image,
+.scarface-image {
+  width: 360px;
+  height: 210px;
+  display: block;
+  margin-top: 14px;
+  margin-bottom: 20px;
+}
 
 /* contact section */
 .contact-section {
@@ -393,10 +390,12 @@ body {
   color: #111827;
   font-weight: 800;
   cursor: pointer;
+  transition: transform 0.25s ease, box-shadow 0.25s ease;
 }
 
 #profile-button:hover {
   transform: translateY(-2px);
+  box-shadow: 0 6px 16px rgba(250, 204, 21, 0.35);
 }
 
 #profile-message {
@@ -405,7 +404,7 @@ body {
   color: #facc15;
 }
 
-.active {
+#profile-message.active {
   color: #facc15;
   font-size: 18px;
   font-weight: 800;
@@ -415,6 +414,15 @@ body {
   display: inline-block;
 }
 
+/* footer */
+footer {
+  text-align: center;
+  color: white;
+  padding: 32px 20px;
+  font-size: 14px;
+}
+
+/* back to top button */
 #back-to-top {
   position: fixed;
   right: 24px;
@@ -437,6 +445,8 @@ body {
   display: none;
 
   box-shadow: 0 6px 18px rgba(0, 0, 0, 0.3);
+  z-index: 9000;
+  transition: transform 0.25s ease;
 }
 
 #back-to-top.show {
@@ -445,4 +455,192 @@ body {
 
 #back-to-top:hover {
   transform: translateY(-3px);
+}
+
+/* fade in animation */
+.card {
+  opacity: 0;
+  transform: translateY(40px);
+  transition: opacity 0.8s ease, transform 0.8s ease;
+}
+
+.card.show {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+/* image modal */
+.zoom-image {
+  cursor: pointer;
+}
+
+#image-modal {
+  position: fixed;
+  inset: 0;
+  background-color: rgba(0, 0, 0, 0.85);
+
+  display: none;
+  justify-content: center;
+  align-items: center;
+
+  z-index: 9999;
+  padding: 20px;
+  box-sizing: border-box;
+}
+
+#image-modal.show {
+  display: flex;
+}
+
+#modal-image {
+  max-width: 90%;
+  max-height: 90%;
+  border-radius: 18px;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.6);
+  object-fit: contain;
+}
+
+/* responsive */
+@media (max-width: 800px) {
+  body {
+    font-size: 15px;
+  }
+
+  .welcome-hero {
+    min-height: 360px;
+  }
+
+  .hero-overlay h1 {
+    font-size: 44px;
+    letter-spacing: 0.05em;
+  }
+
+  .hero-text h2 {
+    font-size: 20px;
+  }
+
+  .quote-wrapper {
+    min-height: auto;
+    padding: 24px 12px;
+  }
+
+  .vertical-quote {
+    writing-mode: horizontal-tb;
+    height: auto;
+    max-width: 100%;
+    padding: 20px;
+    font-size: 14px;
+    line-height: 1.9;
+  }
+
+  .vertical-quote p {
+    margin: 0 0 1.2em;
+  }
+
+  .card {
+    margin: 0 16px 56px;
+    padding: 24px;
+    border-radius: 18px;
+  }
+
+  .card h2 {
+    font-size: 26px;
+  }
+
+  .about-main {
+    flex-direction: column;
+    gap: 24px;
+  }
+
+  .about-image {
+    width: 100%;
+    height: auto;
+    max-height: 520px;
+  }
+
+  .about-text {
+    font-size: 15px;
+  }
+
+  .history-section {
+    padding: 24px;
+  }
+
+  .history-list li {
+    font-size: 15px;
+    padding-left: 50px;
+  }
+
+  .history-list li::before {
+    width: 32px;
+    height: 32px;
+    font-size: 14px;
+  }
+
+  .history-list::before {
+    left: 16px;
+  }
+
+  .love {
+    padding-left: 18px;
+  }
+
+  .love h3 {
+    font-size: 19px;
+  }
+
+  .love p,
+  .love li {
+    font-size: 15px;
+  }
+
+  .love img {
+    margin: 10px 8px 12px 0;
+  }
+
+  .yaruki-image,
+  .programmer-image {
+    width: 100px;
+    height: 100px;
+  }
+
+  .netero-image {
+    width: 100%;
+    height: auto;
+    max-height: 300px;
+  }
+
+  .shibukawa-image {
+    width: 48%;
+    height: auto;
+  }
+
+  .moeyoken-image,
+  .ryomagayuku-image,
+  .komyugatsuji-image,
+  .super-image,
+  .garam-image,
+  .peace-image {
+    width: 31%;
+    height: auto;
+  }
+
+  .godfather-image,
+  .scarface-image {
+    width: 100%;
+    height: auto;
+  }
+
+  .contact-section p {
+    font-size: 15px;
+    word-break: break-word;
+  }
+
+  #back-to-top {
+    right: 16px;
+    bottom: 16px;
+    width: 46px;
+    height: 46px;
+    font-size: 22px;
+  }
 }
