@@ -99,3 +99,52 @@ if (copyEmailButton && copyEmailMessage) {
       });
   });
 }
+
+
+// smooth scroll navigation
+const navLinks = document.querySelectorAll(".site-nav a");
+
+navLinks.forEach(function (link) {
+  link.addEventListener("click", function (event) {
+    event.preventDefault();
+
+    const targetId = link.getAttribute("href");
+    const targetSection = document.querySelector(targetId);
+
+    if (targetSection) {
+      targetSection.scrollIntoView({
+        behavior: "smooth"
+      });
+    }
+  });
+});
+
+
+// active navigation
+const sections = document.querySelectorAll("section[id]");
+const navLinksForActive = document.querySelectorAll(".site-nav a");
+
+function updateActiveNav() {
+  let currentSectionId = "";
+
+  sections.forEach(function (section) {
+    const sectionTop = section.offsetTop;
+    const sectionHeight = section.offsetHeight;
+
+    if (window.scrollY >= sectionTop - 160 && window.scrollY < sectionTop + sectionHeight - 160) {
+      currentSectionId = section.getAttribute("id");
+    }
+  });
+
+  navLinksForActive.forEach(function (link) {
+    link.classList.remove("active");
+
+    if (link.getAttribute("href") === "#" + currentSectionId) {
+      link.classList.add("active");
+    }
+  });
+}
+
+window.addEventListener("scroll", updateActiveNav);
+
+updateActiveNav();
