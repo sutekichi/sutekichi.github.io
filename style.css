@@ -1,4 +1,9 @@
+```css
 /* base */
+html {
+  scroll-padding-top: 80px;
+}
+
 body {
   margin: 0;
   font-family: "Noto Sans JP", sans-serif;
@@ -22,6 +27,44 @@ a {
 
 a:hover {
   text-decoration: underline;
+}
+
+/* navigation */
+.site-nav {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+
+  display: flex;
+  justify-content: center;
+  gap: 28px;
+
+  padding: 14px 20px;
+  box-sizing: border-box;
+
+  background-color: rgba(7, 0, 0, 0.75);
+  backdrop-filter: blur(8px);
+
+  z-index: 8000;
+}
+
+.site-nav a {
+  color: #fffdf2;
+  font-size: 15px;
+  font-weight: 800;
+  letter-spacing: 0.08em;
+  text-decoration: none;
+}
+
+.site-nav a:hover {
+  color: #facc15;
+}
+
+.site-nav a.active {
+  color: #facc15;
+  border-bottom: 2px solid #facc15;
+  padding-bottom: 4px;
 }
 
 /* header */
@@ -347,15 +390,7 @@ a:hover {
 
 /* travel images */
 .godfather-image,
-.scarface-image {
-  width: 360px;
-  height: 210px;
-  display: block;
-  margin-top: 14px;
-  margin-bottom: 20px;
-}
-
-/* ichi image*/
+.scarface-image,
 .ichi-image {
   width: 360px;
   height: 210px;
@@ -388,6 +423,27 @@ a:hover {
 
 .contact-section a:hover {
   text-decoration: underline;
+}
+
+/* email copy button */
+#copy-email-button {
+  border: none;
+  background: none;
+  color: #facc15;
+  font-size: 17px;
+  font-weight: 800;
+  cursor: pointer;
+  text-decoration: underline;
+}
+
+#copy-email-button:hover {
+  color: #fde68a;
+}
+
+#copy-email-message {
+  margin-top: 10px;
+  color: #facc15;
+  font-weight: 700;
 }
 
 #profile-button {
@@ -511,26 +567,56 @@ footer {
 
 /* responsive */
 @media (max-width: 800px) {
-  body {
-    font-size: 15px;
+  html {
+    scroll-padding-top: 80px;
   }
 
+  body {
+    font-size: 15px;
+    overflow-x: hidden;
+  }
+
+  /* navigation */
+  .site-nav {
+    gap: 14px;
+    padding: 12px 10px;
+    overflow-x: auto;
+    justify-content: flex-start;
+  }
+
+  .site-nav a {
+    font-size: 13px;
+    white-space: nowrap;
+  }
+
+  .site-nav a.active {
+    padding-bottom: 3px;
+  }
+
+  /* hero */
   .welcome-hero {
-    min-height: 360px;
+    min-height: 420px;
+    padding-top: 40px;
+    background-position: center;
   }
 
   .hero-overlay h1 {
     font-size: 44px;
     letter-spacing: 0.05em;
+    line-height: 1.2;
   }
 
   .hero-text h2 {
-    font-size: 20px;
+    font-size: 18px;
+    letter-spacing: 0.12em;
+    margin-top: 8px;
   }
 
+  /* poem */
   .quote-wrapper {
     min-height: auto;
     padding: 24px 12px;
+    box-sizing: border-box;
   }
 
   .vertical-quote {
@@ -540,22 +626,41 @@ footer {
     padding: 20px;
     font-size: 14px;
     line-height: 1.9;
+    letter-spacing: 0.04em;
   }
 
   .vertical-quote p {
     margin: 0 0 1.2em;
   }
 
+  .vertical-quote cite {
+    display: block;
+    margin-top: 20px;
+  }
+
+  /* common card */
   .card {
+    width: auto;
     margin: 0 16px 56px;
     padding: 24px;
     border-radius: 18px;
+    box-sizing: border-box;
   }
 
   .card h2 {
     font-size: 26px;
+    margin-bottom: 22px;
   }
 
+  /* anchor position adjustment */
+  #about,
+  #history,
+  #love,
+  #contact {
+    scroll-margin-top: 80px;
+  }
+
+  /* about */
   .about-main {
     flex-direction: column;
     gap: 24px;
@@ -565,12 +670,18 @@ footer {
     width: 100%;
     height: auto;
     max-height: 520px;
+    object-fit: cover;
   }
 
   .about-text {
     font-size: 15px;
   }
 
+  .about-text h2 {
+    font-size: 21px;
+  }
+
+  /* history */
   .history-section {
     padding: 24px;
   }
@@ -590,8 +701,10 @@ footer {
     left: 16px;
   }
 
+  /* love */
   .love {
     padding-left: 18px;
+    margin-bottom: 32px;
   }
 
   .love h3 {
@@ -609,8 +722,8 @@ footer {
 
   .yaruki-image,
   .programmer-image {
-    width: 100px;
-    height: 100px;
+    width: 96px;
+    height: 96px;
   }
 
   .netero-image {
@@ -635,16 +748,34 @@ footer {
   }
 
   .godfather-image,
-  .scarface-image {
+  .scarface-image,
+  .ichi-image {
     width: 100%;
     height: auto;
   }
 
+  /* contact */
   .contact-section p {
     font-size: 15px;
     word-break: break-word;
   }
 
+  #copy-email-button {
+    font-size: 15px;
+    word-break: break-all;
+  }
+
+  #profile-button {
+    padding: 11px 20px;
+  }
+
+  /* footer */
+  footer {
+    padding: 28px 16px;
+    font-size: 13px;
+  }
+
+  /* back to top */
   #back-to-top {
     right: 16px;
     bottom: 16px;
@@ -652,63 +783,11 @@ footer {
     height: 46px;
     font-size: 22px;
   }
+
+  /* modal */
+  #modal-image {
+    max-width: 94%;
+    max-height: 86%;
+  }
 }
-
-#copy-email-button {
-  border: none;
-  background: none;
-  color: #facc15;
-  font-size: 17px;
-  font-weight: 800;
-  cursor: pointer;
-  text-decoration: underline;
-}
-
-#copy-email-button:hover {
-  color: #fde68a;
-}
-
-#copy-email-message {
-  margin-top: 10px;
-  color: #facc15;
-  font-weight: 700;
-}
-
-
-/* navigation */
-.site-nav {
-  position: fixed;
-  top: 0;
-  left: 0;
-  width: 100%;
-
-  display: flex;
-  justify-content: center;
-  gap: 28px;
-
-  padding: 14px 20px;
-  box-sizing: border-box;
-
-  background-color: rgba(7, 0, 0, 0.75);
-  backdrop-filter: blur(8px);
-
-  z-index: 8000;
-}
-
-.site-nav a {
-  color: #fffdf2;
-  font-size: 15px;
-  font-weight: 800;
-  letter-spacing: 0.08em;
-  text-decoration: none;
-}
-
-.site-nav a:hover {
-  color: #facc15;
-}
-
-.site-nav a.active {
-  color: #facc15;
-  border-bottom: 2px solid #facc15;
-  padding-bottom: 4px;
-}
+```
