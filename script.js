@@ -148,3 +148,29 @@ function updateActiveNav() {
 window.addEventListener("scroll", updateActiveNav);
 
 updateActiveNav();
+
+
+
+// contact form
+const contactForm = document.getElementById("contact-form");
+const contactName = document.getElementById("contact-name");
+const contactEmail = document.getElementById("contact-email");
+const contactMessage = document.getElementById("contact-message");
+const formMessage = document.getElementById("form-message");
+
+if (contactForm && contactName && contactEmail && contactMessage && formMessage) {
+  contactForm.addEventListener("submit", function (event) {
+    event.preventDefault();
+
+    if (contactName.value === "" || contactEmail.value === "" || contactMessage.value === "") {
+      formMessage.textContent = "すべての項目を入力してください。";
+      return;
+    }
+
+    formMessage.textContent = "お問い合わせありがとうございます！";
+
+    contactName.value = "";
+    contactEmail.value = "";
+    contactMessage.value = "";
+  });
+}
