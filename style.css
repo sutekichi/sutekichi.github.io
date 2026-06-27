@@ -749,7 +749,10 @@ footer {
 
   .godfather-image,
   .scarface-image,
-  .ichi-image {
+  .ichi-image
+  .kakushiken-image
+  .tasogare-image
+  {
     width: 100%;
     height: auto;
   }
