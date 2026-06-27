@@ -1,4 +1,3 @@
-```css
 /* base */
 html {
   scroll-padding-top: 80px;
@@ -388,10 +387,25 @@ a:hover {
   height: 180px;
 }
 
-/* travel images */
+/* movie images */
+.movie-images {
+  display: flex;
+  justify-content: center;
+  gap: 12px;
+  margin-top: 0.5px;
+  flex-wrap: wrap;
+}
+
+.movie-image {
+  width: 500px;
+  height: 210px;
+  object-fit: cover;
+  border-radius: 12px;
+}
+
+/* old travel images */
 .godfather-image,
-.scarface-image,
-.ichi-image {
+.scarface-image {
   width: 360px;
   height: 210px;
   display: block;
@@ -747,12 +761,17 @@ footer {
     height: auto;
   }
 
+  .movie-images {
+    gap: 12px;
+  }
+
+  .movie-image {
+    width: 50%;
+    height: 180px;
+  }
+
   .godfather-image,
-  .scarface-image,
-  .ichi-image
-  .kakushiken-image
-  .tasogare-image
-  {
+  .scarface-image {
     width: 100%;
     height: auto;
   }
@@ -793,8 +812,6 @@ footer {
     max-height: 86%;
   }
 }
-```
-
 
 /* contact form 
 
@@ -856,4 +873,5 @@ footer {
   font-weight: 800;
   color: #facc15;
 }
-  */
+
+*/
